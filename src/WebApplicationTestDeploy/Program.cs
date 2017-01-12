@@ -16,7 +16,16 @@ namespace WebApplicationTestDeploy
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseUrls(args[0])
                 .Build();
+
+            //var host = new WebHostBuilder()
+            //    .UseKestrel()
+            //    .UseContentRoot(Directory.GetCurrentDirectory())
+            //    .UseIISIntegration()
+            //    .UseStartup()
+            //    .UseUrls(args[0])
+            //    .Build();
 
             host.Run();
         }
